@@ -1,0 +1,40 @@
+# Dossiers et fichiers Python
+__pycache__/
+*.py[cod]
+*.so
+*.log
+*.sqlite3
+*.db
+*.sqlite
+
+# Environnement virtuel
+venv/
+env/
+*.env
+.env.local
+.env.*.local
+
+# Configuration et dépendances
+*.ini
+*.cfg
+*.toml
+*.lock
+poetry.lock
+Pipfile
+Pipfile.lock
+
+# Dossiers de l'éditeur (VS Code, PyCharm...)
+.vscode/
+.idea/
+*.iml
+
+# Fichiers de logs et caches
+logs/
+*.log
+*.out
+*.pid
+
+# Fichiers spécifiques à Uvicorn et FastAPI
+instance/
+*.pid
+*.sock
