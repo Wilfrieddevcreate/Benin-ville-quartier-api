@@ -1,8 +1,8 @@
 import os
+import uvicorn
 from fastapi import FastAPI
 from app.routes.ville import router as ville_router
 from app.routes.quartier import router as quartier_router
-import uvicorn
 
 app = FastAPI()
 
@@ -14,8 +14,7 @@ app.include_router(quartier_router, prefix="/api")
 def root():
     return {"message": "Bienvenue sur l'API des villes et quartiers du Bénin"}
 
-# Si ce fichier est exécuté directement (pour le développement local)
+# Lancer le serveur uniquement si c'est exécuté localement (pas sur Vercel)
 if __name__ == "__main__":
-    # Le port est déterminé par la variable d'environnement PORT
-    port = int(os.environ.get("PORT", 8000))  # Si aucune variable PORT n'est définie, utilise 8000 par défaut
+    port = int(os.environ.get("PORT", 8000))  # Prendre le port de l'environnement si disponible
     uvicorn.run(app, host="0.0.0.0", port=port)
