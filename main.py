@@ -14,7 +14,7 @@ app.include_router(quartier_router, prefix="/api")
 def root():
     return {"message": "Bienvenue sur l'API des villes et quartiers du Bénin"}
 
-# Lancer le serveur uniquement si c'est exécuté localement (pas sur Vercel)
+# Lancer le serveur uniquement si c'est exécuté localement 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))  # Prendre le port de l'environnement si disponible
     uvicorn.run(app, host="0.0.0.0", port=port)
